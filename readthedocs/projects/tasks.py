@@ -184,6 +184,8 @@ class UpdateDocsTask(Task):
         if self.build_env.failed:
             self.send_notifications()
 
+        self.build_env.update_build(state=BUILD_STATE_FINISHED)
+
     @staticmethod
     def get_project(project_pk):
         """Get project from API"""
